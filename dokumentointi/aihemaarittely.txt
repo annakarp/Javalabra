@@ -1,7 +1,19 @@
 aihemäärittely
 
-apua
+aihe: tietovisailu
+Toteutetaan järjestelmä joka kysyy käyttäjältä kysymyksiä joihin käyttäjän tulee vastata tietyssä ajassa. Ohjelma antaa käyttäjälle 3 vaihtoehtoa joista yksi on oikea vastaus. Oikeasta vastauksesta käyttäjä saa jatkaa seuraavaan kysymykseen, mutta väärästä vastauksesta peli loppuu. Ohjelma tallentaa pisteitä.
 
-mita hittoa
+käyttäjät:
+pelaaja ja käyttöjärjestelmä
 
-paivitin githubista
+pelaajan toiminnot:
+  -pelin aloittaminen
+  -kysymyksiin vastaaminen
+  -valitsee pelaako pelin uudelleen
+
+käyttöjärjestelmän toiminnot
+  -oikea vastaus, seuraava kysymys
+  -väärä vastaus, peli loppuu
+  -pisteiden tallentaminen
+  -pisteiden tulostaminen
+  -pelaajalta kysytään pelataanko peli uudestaan   
