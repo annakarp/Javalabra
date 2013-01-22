@@ -1,2 +1,4 @@
 15.1 2h, githubin opettelua, aihemäärittelyn kirjoittaminen, deadline 1 tehtävät
 17.1 1h, luokkakaavion piirtelyä, ohjelman suunnittelua, ensimmäisen luokan aloittaminen 
+21.1 1h, kysymysrekisterin aloittaminen, versio1 
+22.1 3h, ohjelmointia, kysymysrekisterin muokkaamista, ensimmäisten testien kirjoittaminen ja luokkakaavion piirtäminen
