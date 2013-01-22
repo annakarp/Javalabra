@@ -10,9 +10,28 @@ package ohha;
  */
 public class Tietovisa {
     private String nimimerkki;
+    private Kysymysrekisteri rekisteri;
     
     public Tietovisa(String nimimerkki){
         this.nimimerkki = nimimerkki;
+        rekisteri = new Kysymysrekisteri();
+        
+}
+    public boolean lataaKysymysrekisteri(){
+        return rekisteri.lataa();
+    }
     
+    
+    public void kaynnista(){
+        
+ 
+    rekisteri.uusiKysymys();
+    //ajastin.aloita();
+    
+
 }
-}
+    
+    
+      }
+    
+    

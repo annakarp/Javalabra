@@ -8,9 +8,9 @@ package ohha;
  *
  * @author annakarp
  */
-public class Ajastin {
+public class Kayttoliittyma {
     
-    public Ajastin(){
+    public Kayttoliittyma(){
         
     }
     
