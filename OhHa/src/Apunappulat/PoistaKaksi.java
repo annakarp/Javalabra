@@ -2,16 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohha;
+package Apunappulat;
 
 /**
  *
  * @author annakarp
  */
-public class Ajastin {
-    
-    public Ajastin(){
-        
-    }
+public class PoistaKaksi {
     
 }

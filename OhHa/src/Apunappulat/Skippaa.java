@@ -2,15 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohha;
+package Apunappulat;
 
 /**
  *
  * @author annakarp
  */
-public class Pistelaskuri {
+public class Skippaa {
     
-    public Pistelaskuri(){
-        
-    }
 }

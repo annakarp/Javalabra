@@ -2,32 +2,37 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohha;
+package OhHa;
+
 import java.util.*;
 import java.io.File;
 import java.io.FileWriter;
+
 /**
  *
+ *
+ *
  * @author annakarp
+ *
  */
 public class Kysymysrekisteri {
-     private HashMap<String, String> kysymysVastaus;
-     private File tiedosto;
-    
-    
-            
-    public Kysymysrekisteri(String tiedosto){
+
+    private HashMap<String, String> kysymysVastaus;
+    private File tiedosto;
+
+    public Kysymysrekisteri(String tiedosto) {
         this.tiedosto = new File(tiedosto);
         kysymysVastaus = new HashMap<String, String>();
+
     }
-    
+
     public Kysymysrekisteri() {
-        
         kysymysVastaus = new HashMap<String, String>();
         this.tiedosto = new File("rekisteri.txt");
+
     }
-    
-     public boolean lataa() {
+
+    public boolean lataa() {
         Scanner tiedostonLukija;
         try {
             tiedostonLukija = new Scanner(tiedosto);
@@ -41,24 +46,20 @@ public class Kysymysrekisteri {
         }
         return true;
     }
-    
-    
-    public void lisaa(String maa, String paakaupunki){
+
+    public void lisaa(String maa, String paakaupunki) {
         if (kysymysVastaus.get(maa) == null) {
             kysymysVastaus.put(maa, paakaupunki);
-
         }
-        
-    
     }
-    public boolean loytyykoMaa(String maa){
+
+    public boolean loytyykoMaa(String maa) {
         return kysymysVastaus.containsKey(maa);
-        
-    }    
-    public boolean loytyykoKaupunki(String kaupunki){
+    }
+
+    public boolean loytyykoKaupunki(String kaupunki) {
         return kysymysVastaus.containsValue(kaupunki);
     }
-
 
     public boolean tallenna() {
         FileWriter kirjoittaja;
@@ -70,21 +71,25 @@ public class Kysymysrekisteri {
             }
             kirjoittaja.write(rivit);
             kirjoittaja.close();
-
         } catch (Exception e) {
             return false;
         }
         return true;
+    }
+
+    public void uusiKysymys() {
+        arvoMaa();
 
     }
-    public void uusiKysymys(){
-        arvoMaa();
-    }
-    
-    public String arvoMaa(){
+
+    public String arvoMaa() {
         Random random = new Random();
-        List<String>maat = new ArrayList<String>(kysymysVastaus.keySet());
-        String maa = maat.get( random.nextInt(maat.size()) );
+        List<String> maat = new ArrayList<String>(kysymysVastaus.keySet());
+        String maa = maat.get(random.nextInt(maat.size()));
         return maa;
+    }
+
+    public HashMap<String, String> getKysymykset() {
+        return this.kysymysVastaus;
     }
 }
