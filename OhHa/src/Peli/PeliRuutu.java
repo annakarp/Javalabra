@@ -34,6 +34,7 @@ public class PeliRuutu implements Runnable {
     }
 
     private void luoRuutu(Container container) {
+        
         JLabel kysymys = new JLabel();
         this.ajastin = new JLabel();
         
@@ -42,12 +43,14 @@ public class PeliRuutu implements Runnable {
          JButton c = new JButton();
          JButton d = new JButton();
 
-         JButton skippaa = new JButton();
-         JButton poistaKaksi = new JButton();
+         JButton skippaa = new JButton("skippaa");
+         JButton poistaKaksi = new JButton("poista kaksi");
 
-         GridLayout layout = new GridLayout(1,5);
+         GridLayout layout = new GridLayout(5,1);
+         container.setLayout(layout);
          JPanel oljenkorret = new JPanel();
-         GridLayout layout1 = new GridLayout(2,1);
+         GridLayout layout1 = new GridLayout(1,2);
+         oljenkorret.setLayout(layout1);
 
          oljenkorret.add(skippaa);
          oljenkorret.add(poistaKaksi);
@@ -61,7 +64,7 @@ public class PeliRuutu implements Runnable {
          container.add(oljenkorret);
          
 
-        container.add(ajastin);
+         //container.add(ajastin);
 
     }
 

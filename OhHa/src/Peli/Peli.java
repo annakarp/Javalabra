@@ -30,20 +30,20 @@ public class Peli implements Runnable {
     @Override
     public void run() {
         this.kaynnissa = true;
-        int aika = 0;
-        long start = System.currentTimeMillis();
-        while (kaynnissa) {
-            if (aika >= this.rajaAika) {
-                kaynnissa = false;
-            }
-            if (System.currentTimeMillis() - start >= 1000) {
-                aika++;
-                this.peliruutu.setKello(aika);
-                //System.out.println(aika);
-                start = System.currentTimeMillis();
-            }
-
-        }
+//        int aika = 0;
+//        long start = System.currentTimeMillis();
+//        while (kaynnissa) {
+//            if (aika >= this.rajaAika) {
+//                kaynnissa = false;
+//            }
+//            if (System.currentTimeMillis() - start >= 1000) {
+//                aika++;
+//                this.peliruutu.setKello(aika);
+//                //System.out.println(aika);
+//                start = System.currentTimeMillis();
+//            }
+//
+//        }
 
     }
 }
