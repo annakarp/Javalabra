@@ -2,3 +2,5 @@
 17.1 1h, luokkakaavion piirtelyä, ohjelman suunnittelua, ensimmäisen luokan aloittaminen 
 21.1 1h, kysymysrekisterin aloittaminen, versio1 
 22.1 3h, ohjelmointia, kysymysrekisterin muokkaamista, ensimmäisten testien kirjoittaminen ja luokkakaavion piirtäminen
+26.1 3h, ohjelmointia, peliruudun ja aloitusruudun luominen, ajastimene ensimmäinen versio
+28.1 2h, peliruudun korjaaminen, ajastimen korjailua
