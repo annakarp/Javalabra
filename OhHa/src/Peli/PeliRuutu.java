@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 /**
- *
+ * 
  *
  *
  * @author AK
@@ -33,6 +33,10 @@ public class PeliRuutu implements Runnable {
         this.ruutu.setVisible(true);
     }
 
+    /**
+     * 
+     * @param container 
+     */
     private void luoRuutu(Container container) {
         
         JLabel kysymys = new JLabel();
