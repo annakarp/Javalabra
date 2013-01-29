@@ -4,3 +4,4 @@
 22.1 3h, ohjelmointia, kysymysrekisterin muokkaamista, ensimmäisten testien kirjoittaminen ja luokkakaavion piirtäminen
 26.1 3h, ohjelmointia, peliruudun ja aloitusruudun luominen, ajastimene ensimmäinen versio
 28.1 2h, peliruudun korjaaminen, ajastimen korjailua
+29.1 2h, testien kirjoittamista ja peliruudun korjaamisen yrittämistä, testien kirjoittamista
