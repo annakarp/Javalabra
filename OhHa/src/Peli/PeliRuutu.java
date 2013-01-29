@@ -43,8 +43,8 @@ public class PeliRuutu implements Runnable {
          JButton c = new JButton();
          JButton d = new JButton();
 
-         JButton skippaa = new JButton("skippaa");
-         JButton poistaKaksi = new JButton("poista kaksi");
+         JButton skippaa = new JButton("Skippaa");
+         JButton poistaKaksi = new JButton("Poista kaksi");
 
          GridLayout layout = new GridLayout(5,1);
          container.setLayout(layout);

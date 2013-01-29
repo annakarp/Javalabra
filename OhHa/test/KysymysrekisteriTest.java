@@ -15,10 +15,10 @@ import static org.junit.Assert.*;
  *
  * @author annakarp
  */
-public class Testit {
+public class KysymysrekisteriTest {
     private Kysymysrekisteri rekisteri;
     
-    public Testit() {
+    public KysymysrekisteriTest() {
     }
     
     @BeforeClass
@@ -71,5 +71,9 @@ public class Testit {
     @Test
     public void toimiikoArpominen(){
         assertTrue(!rekisteri.arvoMaa().isEmpty());
+    }
+    @Test
+    public void palauttaaKysymykset(){
+        assertTrue(!rekisteri.getKysymykset().isEmpty());
     }
 }
