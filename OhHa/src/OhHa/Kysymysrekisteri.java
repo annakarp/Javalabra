@@ -28,6 +28,7 @@ public class Kysymysrekisteri {
     public Kysymysrekisteri() {
         kysymysVastaus = new HashMap<String, HashMap<String, ArrayList<String>>>();
         this.tiedosto = new File("C:\\Users\\AK\\Documents\\NetBeansProjects\\OhHa\\src\\OhHa\\rekisteri");
+        //TÄÄLLÄ VIRHE, EI LÖYDÄ TIEDOSTOA
     }
 
     public boolean lataa() {
