@@ -25,10 +25,10 @@ public class Tietovisa {
         return rekisteri.lataa();
     }
 
-    public void kaynnista() {
-        rekisteri.uusiKysymys();
-
-//ajastin.aloita();
-
-    }
+//    public void kaynnista() {
+//        rekisteri.uusiKysymys();
+//
+//        ajastin.aloita();
+//
+//    }
 }

@@ -23,12 +23,13 @@ public class Pelaa implements ActionListener {
 
     public Pelaa(JTextField aika, Kysymysrekisteri rekisteri) {
         this.aika = aika;
+        this.rekisteri = rekisteri;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        int rsjsAika = Integer.parseInt(aika.getText());
-        Peli peli = new Peli(rsjsAika, rekisteri);
+        int rajaAika = Integer.parseInt(aika.getText());
+        Peli peli = new Peli(rajaAika, rekisteri);
         peli.run();
 
     }

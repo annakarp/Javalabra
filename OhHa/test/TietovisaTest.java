@@ -47,13 +47,13 @@ public class TietovisaTest {
         assertTrue(rekisteri.lataa());
     }
     
-    @Test
-    public void kaynnistaako(){
-        try{
-            rekisteri.uusiKysymys();
-            fail("Exception was not thrown when attepting to load new question");
-        }catch (Exception e){
-            assertNotNull(e.getMessage());
-        }
-    }
+//    @Test
+//    public void kaynnistaako(){
+//        try{
+//            rekisteri.uusiKysymys();
+//            fail("Exception was not thrown when attepting to load new question");
+//        }catch (Exception e){
+//            assertNotNull(e.getMessage());
+//        }
+//    }
 }

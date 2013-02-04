@@ -46,17 +46,17 @@ public class KysymysrekisteriTest {
     // @Test
     // public void hello() {}
     
-    @Test
-    public void toimiikoLisaysMaille(){
-        rekisteri.lisaa("Kiina", "Peking");
-        assertTrue(rekisteri.loytyykoMaa("Kiina"));
-    }    
-    
-    @Test
-    public void toimiikoLisaysKaupungeille(){
-        rekisteri.lisaa("Kiina", "Peking");
-        assertTrue(rekisteri.loytyykoKaupunki("Peking"));
-    }
+//    @Test
+//    public void toimiikoLisaysMaille(){
+//        rekisteri.lisaa("Kiina", "Peking");
+//        assertTrue(rekisteri.loytyykoMaa("Kiina"));
+//    }    
+//    
+//    @Test
+//    public void toimiikoLisaysKaupungeille(){
+//        rekisteri.lisaa("Kiina", "Peking");
+//        assertTrue(rekisteri.loytyykoKaupunki("Peking"));
+//    }
     
     @Test
     public void toimiikoLataus(){

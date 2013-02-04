@@ -17,19 +17,17 @@ import java.io.FileWriter;
  */
 public class Kysymysrekisteri {
 
-    private HashMap<String, String> kysymysVastaus;
+    private HashMap<String, HashMap<String, ArrayList<String>>> kysymysVastaus;
     private File tiedosto;
 
     public Kysymysrekisteri(String tiedosto) {
         this.tiedosto = new File(tiedosto);
-        kysymysVastaus = new HashMap<String, String>();
-
+        kysymysVastaus = new HashMap<String, HashMap<String, ArrayList<String>>>();
     }
 
     public Kysymysrekisteri() {
-        kysymysVastaus = new HashMap<String, String>();
-        this.tiedosto = new File("rekisteri.txt");
-
+        kysymysVastaus = new HashMap<String, HashMap<String, ArrayList<String>>>();
+        this.tiedosto = new File("C:\\Users\\AK\\Documents\\NetBeansProjects\\OhHa\\src\\OhHa\\rekisteri");
     }
 
     public boolean lataa() {
@@ -42,17 +40,23 @@ public class Kysymysrekisteri {
         while (tiedostonLukija.hasNextLine()) {
             String rivi = tiedostonLukija.nextLine();
             String[] osat = rivi.split(":");
-            this.kysymysVastaus.put(osat[0], osat[1]);
+            String[] kaupungit = osat[1].split("&");
+            ArrayList<String> vastausvaihtoehdot = new ArrayList<String>();
+            for (int i = 1; i < kaupungit.length; i++) {
+                vastausvaihtoehdot.add(kaupungit[i]);
+            }
+            HashMap<String, ArrayList<String>> kaupunki = new HashMap<String, ArrayList<String>>();
+            kaupunki.put(kaupungit[0], vastausvaihtoehdot);
+            kysymysVastaus.put(osat[0], kaupunki);
         }
         return true;
     }
 
-    public void lisaa(String maa, String paakaupunki) {
-        if (kysymysVastaus.get(maa) == null) {
-            kysymysVastaus.put(maa, paakaupunki);
-        }
-    }
-
+//  public void lisaa(String maa, String paakaupunki){
+//      if (kysymysVastaus.get(maa) == null) {
+//      kysymysVastaus.put(maa, paakaupunki);
+// }
+// }
     public boolean loytyykoMaa(String maa) {
         return kysymysVastaus.containsKey(maa);
     }
@@ -77,11 +81,10 @@ public class Kysymysrekisteri {
         return true;
     }
 
-    public void uusiKysymys() {
-        arvoMaa();
-
-    }
-
+//  public void uusiKysymys(){
+//      arvoMaa();
+// }
+//
     public String arvoMaa() {
         Random random = new Random();
         List<String> maat = new ArrayList<String>(kysymysVastaus.keySet());
@@ -89,7 +92,22 @@ public class Kysymysrekisteri {
         return maa;
     }
 
-    public HashMap<String, String> getKysymykset() {
+    public HashMap<String, ArrayList<String>> vaihtoehdot(String maa) {
+        return this.kysymysVastaus.get(maa);
+    }
+
+    public String paakaupunki(String maa) {
+        for (String string : this.kysymysVastaus.get(maa).keySet()) {
+            return string;
+        }
+        return null;
+    }
+
+    public ArrayList<String> vaihtoehdot(String maa, String paakaupunki) {
+        return this.kysymysVastaus.get(maa).get(paakaupunki);
+    }
+
+    public HashMap<String, HashMap<String, ArrayList<String>>> getKysymykset() {
         return this.kysymysVastaus;
     }
 }
