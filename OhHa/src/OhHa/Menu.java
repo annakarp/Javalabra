@@ -27,6 +27,7 @@ public class Menu implements Runnable {
     @Override
     public void run() {
         Kysymysrekisteri rekisteri = new Kysymysrekisteri();
+        rekisteri.lataa();
         this.ruutu = new JFrame("Pääkaupunkivisa");
         this.ruutu.setPreferredSize(new Dimension(400, 200));
         this.ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
