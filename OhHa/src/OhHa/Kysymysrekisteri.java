@@ -34,6 +34,11 @@ public class Kysymysrekisteri {
 
     }
 
+    /** lataa kysymysrekisterin
+     *
+     * @param 
+     */
+    
     public boolean lataa() {
         Scanner tiedostonLukija;
         try {
@@ -69,6 +74,12 @@ public class Kysymysrekisteri {
         return kysymysVastaus.containsValue(kaupunki);
     }
 
+    
+    /** tallentaa kysymysrekisterin
+     *
+     * @param 
+     */
+    
     public boolean tallenna() {
         FileWriter kirjoittaja;
         try {
@@ -89,6 +100,13 @@ public class Kysymysrekisteri {
 //      arvoMaa();
 // }
 //
+    
+    
+    /** arpoo maan eli uuden kysymyksen
+     *
+     * @param 
+     */
+    
     public String arvoMaa() {
         Random random = new Random();
         List<String> maat = new ArrayList<String>(kysymysVastaus.keySet());

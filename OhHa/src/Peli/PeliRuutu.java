@@ -40,9 +40,9 @@ public class PeliRuutu implements Runnable {
         this.ruutu.setVisible(true);
     }
 
-    /**
+    /** luo peliruudun, jossa on vastausvaihtoehdot sekä oljenkorret
      *
-     * @param container
+     * @param 
      */
     private void luoRuutu(Container container) {
 
@@ -95,12 +95,21 @@ public class PeliRuutu implements Runnable {
         //container.add(ajastin);
 
     }
-
+    /** asettaa kellon, ei toimi
+     *
+     * @param 
+     */
+    
     public void setKello(int aika) {
         this.ajastin.setText(Integer.toString(aika));
         this.ruutu.repaint();
     }
 
+    /** asettaa napit
+     *
+     * @param 
+     */
+    
     public ArrayList<JButton> napit() {
         return napit;
     }

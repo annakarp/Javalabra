@@ -21,6 +21,11 @@ public class Tietovisa {
 
     }
 
+    /** lataa kysymysrekisterin
+     *
+     * @param 
+     */
+    
     public boolean lataaKysymysrekisteri() {
         return rekisteri.lataa();
     }

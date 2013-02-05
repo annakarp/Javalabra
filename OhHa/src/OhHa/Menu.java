@@ -36,6 +36,11 @@ public class Menu implements Runnable {
         this.ruutu.setVisible(true);
 
     }
+    
+    /** luo aloitusruudun
+     *
+     * @param 
+     */
 
     private void luoRuutu(Container container, Kysymysrekisteri rekisteri) {
         GridLayout layout = new GridLayout(3, 2);

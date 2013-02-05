@@ -28,6 +28,13 @@ public class Peli implements Runnable {
         peliruutu.run();
     }
 
+    /** käynnistää pelin sekä arpoo maan eli seuraavan kysymyksen pelissä, asettaa
+     *  peliruudulle kysymyksen, maan ja kaupungit
+     *
+     * @param 
+     */
+    
+    
     @Override
     public void run() {
     // try{

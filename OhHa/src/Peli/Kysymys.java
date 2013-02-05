@@ -69,6 +69,10 @@ public class Kysymys {
         kysymys.setText(this.kysymys);
 
     }
+    
+//    public String toString(){
+//        return kysymys;
+//    }
 
     public void poistaKaksiVaaraa(ArrayList<JButton> nappulat) {
         int poistetut = 0;
