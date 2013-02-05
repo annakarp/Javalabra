@@ -5,3 +5,5 @@
 26.1 3h, ohjelmointia, peliruudun ja aloitusruudun luominen, ajastimene ensimmäinen versio
 28.1 2h, peliruudun korjaaminen, ajastimen korjailua
 29.1 2h, testien kirjoittamista ja peliruudun korjaamisen yrittämistä, testien kirjoittamista
+02.2 4h, kysymys luokan luominen, oikeiden ja väärien vastausten erottaminen ja sijoittaminen nappuloihin
+04.2 1h, ongelmien korjausta
