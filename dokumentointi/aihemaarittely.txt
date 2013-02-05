@@ -10,6 +10,7 @@ pelaajan toiminnot:
   -pelin aloittaminen
   -kysymyksiin vastaaminen
   -valitsee pelaako pelin uudelleen
+  -lukee pistelistan
 
 käyttöjärjestelmän toiminnot
   -oikea vastaus, seuraava kysymys
