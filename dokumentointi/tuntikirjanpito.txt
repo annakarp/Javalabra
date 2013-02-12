@@ -8,5 +8,6 @@
 02.2 4h, kysymys luokan luominen, oikeiden ja väärien vastausten erottaminen ja sijoittaminen nappuloihin
 04.2 1h, ongelmien korjausta
 05.2 3.5h, testien korjaaminen, sekvenssikaaviot, koodiin hajoaminen
-11.2 4h, Arkkitekstuurin uudelleen arvioiminen, uudelleen koodaamista siistimmin sekä turhien luokkien karsimista,
+11.2 4h, Arkkitehtuurinuurin uudelleen arvioiminen, uudelleen koodaamista siistimmin sekä turhien luokkien karsimista,
          rakenteen muokkaamista kokeiluasteella, en tuo sitä vielä varsinaiseen tehtävään
+12.2 1h, javadocin kirjoittamista, uuden ja vanhan vertailua, saatan tehdä osan ohjelmasta uusiksi
