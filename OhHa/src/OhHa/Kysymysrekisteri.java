@@ -1,4 +1,12 @@
+/** hallitsee maita ja kaupunkeja, lataa ja tallentaa rekisteri.txt luokkaan maat ja kaupunkivaihtoehdot
+ *
+ * @param 
+ */
+
+
+
 /*
+ * 
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
