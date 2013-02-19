@@ -1,29 +1,29 @@
-/** käynnistää pelin
- *
- * @param 
- */
-
-
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package Main;
 
-import OhHa.Menu;
+
+import Apuluokat.KysymysGeneraattori;
+import Apuluokat.KysymysLataaja;
+import Peli.MuistiPeli;
+import java.io.FileNotFoundException;
 
 /**
  *
- * @author annakarp
+ * @author AK
  */
 public class Main {
-
-    public static void main(String[] args) {
-    // TODO code application logic here
-
-        Menu menu = new Menu();
-        menu.run();
-
+    public static void main(String[] args) throws FileNotFoundException {
+        KysymysLataaja lataaja = new KysymysLataaja(args[0]);
+        KysymysGeneraattori generaattori = new KysymysGeneraattori(lataaja);
+        MuistiPeli peli = new MuistiPeli(generaattori); 
+        
+        peli.run();
+        
+        
+       
     }
+    
 }

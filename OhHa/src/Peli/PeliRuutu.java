@@ -1,83 +1,187 @@
-/** luo varsinaisen peliruudun jossa peli tapahtuu
- *
- * @param 
- */
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package Peli;
 
+import Apuluokat.KysymysGeneraattori;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.Timer;
 import javax.swing.WindowConstants;
-import java.util.ArrayList;
 
 /**
  *
- *
- *
  * @author AK
- *
  */
-public class PeliRuutu implements Runnable {
+public class PeliRuutu implements ActionListener {
 
-    private ArrayList<JButton> napit; //a,b,c,d
+    JLabel ajastinLabel;
+    Timer ajastin;
+    Kysymys kysymys;
+    KysymysGeneraattori generaattori;
+    private Pelaaja pelaaja;
     private JFrame ruutu;
-    private String nimimerkki;
-    private JLabel ajastin;
-    private JLabel kysymys;
-    private String vastaus = null;
+    private JTextField nimim;
+    private ArrayList<JButton> napit; // a,b,c,d
 
-    @Override
-    public void run() {
-        napit = new ArrayList<JButton>();
-        this.ruutu = new JFrame(nimimerkki);
-        this.ruutu.setPreferredSize(new Dimension(800, 800));
-        this.luoRuutu(this.ruutu.getContentPane());
+    public PeliRuutu(KysymysGeneraattori generaattori) {
+        this.generaattori = generaattori;
+        luoAloitusValikko();
+    }
+
+    public void luoAloitusValikko() {
+        this.ruutu = new JFrame("Pääkaupunkivisa");
+        this.ruutu.setPreferredSize(new Dimension(400, 200));
+        this.ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        luoRuutu(ruutu.getContentPane());
         this.ruutu.pack();
         this.ruutu.setVisible(true);
     }
 
-    /** luo peliruudun, jossa on vastausvaihtoehdot sekä oljenkorret
-     *
-     * @param 
-     */
     private void luoRuutu(Container container) {
+        GridLayout layout = new GridLayout(3, 2);
+        container.setLayout(layout);
 
-        kysymys = new JLabel();
-        this.ajastin = new JLabel();
+        JLabel nimimerkki = new JLabel("Nimimerkki");
+        JLabel vastausaika = new JLabel("Vastausaika per kysymys");
 
-        JButton a = new JButton();
-        JButton b = new JButton();
-        JButton c = new JButton();
-        JButton d = new JButton();
+        nimim = new JTextField();
+        //miten asettaa luokkamuuttuja nick textikentän nimim mukaan ?JTextfieldin javadoccareista löytyy sen metodin nimi, joka palauttaa sen arvon.. joku getValue tjsp.
+        //nimim.addActionListener(this);
+        JLabel aika = new JLabel("10sec");
 
-        ActionA actionA = new ActionA(this.vastaus, a);
-        ActionB actionB = new ActionB(this.vastaus, b);
-        ActionC actionC = new ActionC(this.vastaus, c);
-        ActionD actionD = new ActionD(this.vastaus, d);
+        JButton huippupisteet = new JButton("Pistelista");
+        JButton pelaa = new JButton("Pelaa!");
 
-        a.addActionListener(actionA);
-        b.addActionListener(actionB);
-        c.addActionListener(actionC);
-        d.addActionListener(actionD);
+        pelaa.addActionListener(this);
 
-        napit.add(a);
-        napit.add(b);
-        napit.add(c);
-        napit.add(d);
+        container.add(nimimerkki);
+        container.add(nimim);
+
+        container.add(vastausaika);
+        container.add(aika);
+
+        container.add(huippupisteet);
+        container.add(pelaa);
+    }
+
+    //nappien toiminnallisuudet
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+
+        if (ae.getActionCommand().equals("Pelaa!")) {
+            this.pelaaja = new Pelaaja(nimim.getText());
+            AloitaPeli();
+        }
+        if (ae.getActionCommand().equals("Skippaa")) {
+            if (generaattori.kysymyksetLoppu()) {
+                lopetaPeli();
+            } else {
+                AloitaPeli();
+            }
+        }
+
+    }
+
+    public void AloitaPeli() {
+        if (generaattori.kysymyksetLoppu()) {
+            lopetaPeli();
+            return;
+        }
+        this.ruutu.dispose();
+        this.ruutu = new JFrame("Pääkaupunkivisa");
+        this.ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        luoPeliruutu(this.ruutu.getContentPane());
+        this.ruutu.pack();
+        this.ruutu.setVisible(true);
+    }
+
+    private void luoPeliruutu(Container container) {
+        this.ruutu.setPreferredSize(new Dimension(800, 800));
+        kysymys = generaattori.generoiKysymys();
+
+        JLabel kyssari = new JLabel(kysymys.getNimi());
+        ajastinLabel = new JLabel("10");
+
+        if (ajastin != null) {
+            ajastin.removeActionListener(ajastin.getActionListeners()[0]);
+        }
+
+        ajastin = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                int seconds = Integer.parseInt(ajastinLabel.getText());
+                seconds--;
+                if (seconds == 0) {
+                    ajastinLabel.setText("10");
+                    AloitaPeli();
+                } else {
+                    ajastinLabel.setText("" + seconds);
+                }
+            }
+        });
+        ajastin.start();
+
+        ArrayList<JButton> buttonit = generoiVastausvaihtoehdot((int) (Math.random() * (3 + 1)));
+
+        JButton a = buttonit.get(0);
+        a.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getActionCommand().equals(kysymys.getVastaus())) {
+                    pelaaja.kasvataPisteita(Integer.parseInt(ajastinLabel.getText()));
+                    AloitaPeli(); 
+                }
+            }
+        });
+        JButton b = buttonit.get(1);
+        b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getActionCommand().equals(kysymys.getVastaus())) {
+                    pelaaja.kasvataPisteita(Integer.parseInt(ajastinLabel.getText()));
+                    AloitaPeli(); 
+                }
+            }
+        });
+
+        JButton c = buttonit.get(2);
+        c.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getActionCommand().equals(kysymys.getVastaus())) {
+                    pelaaja.kasvataPisteita(Integer.parseInt(ajastinLabel.getText()));
+                    AloitaPeli(); 
+                }
+            }
+        });
+
+        JButton d = buttonit.get(3);
+
+        d.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getActionCommand().equals(kysymys.getVastaus())) {
+                    pelaaja.kasvataPisteita(Integer.parseInt(ajastinLabel.getText()));
+                    AloitaPeli(); 
+                }
+            }
+        });
 
         JButton skippaa = new JButton("Skippaa");
-        JButton poistaKaksi = new JButton("Poista kaksi");
-
-        //PoistaKaksi poistakaksi = new POistaKaksi(napit);
+        skippaa.addActionListener(this);
+        
 
         GridLayout layout = new GridLayout(5, 1);
         container.setLayout(layout);
@@ -86,49 +190,53 @@ public class PeliRuutu implements Runnable {
         oljenkorret.setLayout(layout1);
 
         oljenkorret.add(skippaa);
-        oljenkorret.add(poistaKaksi);
+        container.add(kyssari);
 
-        container.add(kysymys);
-        container.add(ajastin);
+        container.add(ajastinLabel);
+
         container.add(a);
         container.add(b);
         container.add(c);
         container.add(d);
+
         container.add(oljenkorret);
-
-
-        //container.add(ajastin);
-
-    }
-    /** asettaa kellon, ei toimi
-     *
-     * @param 
-     */
-    
-    public void setKello(int aika) {
-        this.ajastin.setText(Integer.toString(aika));
-        this.ruutu.repaint();
     }
 
-    /** asettaa napit
-     *
-     * @param 
-     */
-    
-    public ArrayList<JButton> napit() {
-        return napit;
-    }
+    private ArrayList<JButton> generoiVastausvaihtoehdot(int oikeanVastauksenIndeksi) {
+        ArrayList<JButton> list = new ArrayList<JButton>();
+        boolean vastausGeneroitu = false;
 
-    public JLabel getKysymys() {
-        return kysymys;
-    }
-
-    public String getVastaus() {
-        if (vastaus != null) {
-            String palautettava = vastaus;
-            this.vastaus = null;
-            return palautettava;
+        for (int i = 0; i < 4; i++) {
+            String vastausvaihtoehto = kysymys.getVastausvaihtoehto();
+            if (vastausvaihtoehto.equals(kysymys.getVastaus())) {
+                vastausGeneroitu = true;
+            }
+            JButton nappula = new JButton(vastausvaihtoehto);
+            list.add(nappula);
         }
-        return vastaus;
+        if (!vastausGeneroitu) {
+            JButton nappula = new JButton(kysymys.getVastaus());
+            list.remove(oikeanVastauksenIndeksi);
+            list.add(oikeanVastauksenIndeksi, nappula);
+        }
+        return list;
+    }
+
+    public void lopetaPeli() {
+        System.out.println("Nimimerkki: " + pelaaja.getNimimerkki() + "\n" + "Pisteet: " + pelaaja.getPisteet());
+        this.ruutu.dispose();
+        
+        naytaTulokset();
+    }
+    //luo ikkuna ja täytä labelit pelaajan tiedoilla
+    private void naytaTulokset() {
+        TulosManageri tulosmanageri = new TulosManageri();
+        
+        //kutsutaan tulosmanagerien metodeja lataaTulokset ja täytetään labelit
+        
+        //tallennetaan uusi tulos tekstitiedoston kutsumalla tulosmanagerin metodia tallennaTulos
+        
+        //suljetaan ohjelma
+        System.exit(0);
     }
 }
