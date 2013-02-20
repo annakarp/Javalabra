@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
  */
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        KysymysLataaja lataaja = new KysymysLataaja(args[0]);
+        KysymysLataaja lataaja = new KysymysLataaja("src/Apuluokat/rekisteri");
         KysymysGeneraattori generaattori = new KysymysGeneraattori(lataaja);
         MuistiPeli peli = new MuistiPeli(generaattori); 
         
