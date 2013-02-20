@@ -11,3 +11,5 @@
 11.2 4h, Arkkitehtuurinuurin uudelleen arvioiminen, uudelleen koodaamista siistimmin sekä turhien luokkien karsimista,
          rakenteen muokkaamista kokeiluasteella, en tuo sitä vielä varsinaiseen tehtävään
 12.2 1h, javadocin kirjoittamista, uuden ja vanhan vertailua, saatan tehdä osan ohjelmasta uusiksi
+18.2 4h, koodin uudelleen rakentaminen, siistiminen, turhien luokkien karsiminen, tuli nätti
+20.2 
