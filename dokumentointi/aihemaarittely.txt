@@ -1,20 +1,41 @@
-aihemäärittely
+Aihemäärittely
 
-aihe: tietovisailu
-Toteutetaan järjestelmä joka kysyy käyttäjältä kysymyksiä joihin käyttäjän tulee vastata tietyssä ajassa. Ohjelma antaa käyttäjälle 3 vaihtoehtoa joista yksi on oikea vastaus. Oikeasta vastauksesta käyttäjä saa jatkaa seuraavaan kysymykseen, mutta väärästä vastauksesta peli loppuu. Ohjelma tallentaa pisteitä.
+Aihe: tietovisailu
+Toteutetaan järjestelmä joka kysyy käyttäjältä maiden pääkaupunkeja. 
+Ohjelma antaa käyttäjälle 4 vaihtoehtoa joista yksi on oikea vastaus.
+Vastausaikaa yhtä kysymystä kohti on 10 sekuntia, jokainen kysymys on käytävä läpi 
+viedäkseen peli loppuun.
+Oikeasta vastauksesta käyttäjä saa jatkaa seuraavaan kysymykseen.
+Ohjelma tallentaa pelaajan nimimerkin ja pisteet.
 
-käyttäjät:
+Käyttäjät:
 pelaaja ja käyttöjärjestelmä
 
-pelaajan toiminnot:
+Pelaajan toiminnot:
+  -nimimerkin antaminen
   -pelin aloittaminen
   -kysymyksiin vastaaminen
-  -valitsee pelaako pelin uudelleen
-  -lukee pistelistan
+  -pelin lopettamien
+  
 
-käyttöjärjestelmän toiminnot
+Käyttöjärjestelmän toiminnot
   -oikea vastaus, seuraava kysymys
-  -väärä vastaus, peli loppuu
+  -väärä vastaus, aika jatkuu kunnes oikea vastaus löytyy
   -pisteiden tallentaminen
   -pisteiden tulostaminen
-  -pelaajalta kysytään pelataanko peli uudestaan   
+  -nimimerkin tallentaminen
+  -nimimerkin tulostaminen
+
+Ohjelman sisältö:
+Apuluokat, joissa joissa KysymysGeneraattori, KysymysLataaja sekä rekisteri
+  -KysymysGeneraattori lataa kysymykset rekisteristä, tarkistaa onko kysymykset mahdollisesti loppu
+   sekä arpoo satunnaisesti uuden kysymyksen
+  -KysymysLataaja lataa rekisterin
+  -rekisteri sisältää pelin kysymykset, vastausvaihtoehdot sekä oikean vastauksen
+Main, joka käynnistää ohjelman
+Peli jossa Kysymys, MuistiPeli, Pelaaja, PeliRuutu
+  -Kysymys hallinnoi/luo kysymykset-listalle parametrit
+  -MuistiPeli käynnistää pelin
+  -Pelaaja antaa pelin käyttäjälle parametrit elin nimimerkin sekä pisteet
+  -PeliRuutu luo pelin aloitusvalikon, varsinaisen peliruudun sekä lopetusvalikon, 
+   hallinnoi pelinappien toimintaa sekä lopettaa pelin
