@@ -1,7 +1,9 @@
 Käyttöohjeet:
 
-Käynnistät pelin run-napista (se vihreä keno-kolmio)
-Aloitusvalikkoon Nimimerkki-ruutuun kirjoitat nimimerkkisi
-Paina Pelaa! nappia
-Vastaa kysymyksiin painamalla nappia jossa mielestäsi on oikea vastaus, aikaa sinulla on kutakin kysymystä kohden 10 sekunttia
-Kun kysymykset on loppu plei avaa sinulle tuloksesi, lopetat pelin painamalla close-nappia (se punainen x oikeassa yläkulmassa) 
+-Käynnistät pelin run-napista (se vihreä keno-kolmio)
+-Aloitusvalikkoon Nimimerkki-ruutuun kirjoitat nimimerkkisi
+-Paina Pelaa! nappia
+-Vastaa kysymyksiin painamalla nappia jossa mielestäsi on oikea vastaus, 
+ aikaa sinulla on kutakin kysymystä kohden 10 sekunttia
+-Kun kysymykset loppuvat peli avaa sinulle tuloksesi, 
+ lopetat pelin painamalla close-nappia (se punainen x oikeassa yläkulmassa) 
