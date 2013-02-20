@@ -1,3 +1,14 @@
 Ohjelman rakenteen kuvaus
-Luokka Main luo ilmentymät lataajasta, generaattorista sekä pelistä, sekä käynnistää pelin käyttämällä MuistiPeli luokan metodia run. Metodi luo ilmentymän peliruudusta joka käyttää parametrina generaattoria eli käyttää generaattoria. Luokka PeliRuutu luo ensimmäisenä aloitusvalikon(käyttää metodia luoRuutu) johon pelaaja antaa nimimerkin sekä aloittaa pelin painamalla pelaa nappia. Kun painetaan pelaa nappia metodi aloitaPeli luo uuden ruudun (käyttää metodia luoPeliruutu) tässä ruudussa varsinainen pelaaminen tapahtuu. Metodi generoiVastaukset arpoo vastausvaihtoehdot paikoilleen, kun pelin skippaa nappia painetaan siirtyy peli uuteen kysymykseen. Kun kysymykset loppuu näyttää peli pelaajan tulokset, naytaTulokset sekä luoLoppuRuutu metodien avulla.
-	Pelaajan tiedot eli nimimerkki sekä pisteet on peliruudulla tiedossa. KysymysGeneraattori käyttää kysymysLataajaa lataamaan kysymykset jotka on tallennettuna listaan luokassa kysymys. Varsinainen "kysymys" on rekisterissä mistä luokka kysymysLataaja lataa tiedoston generaattorin käyttöön.
+Luokka Main luo ilmentymät lataajasta, generaattorista sekä pelistä, 
+sekä käynnistää pelin käyttämällä MuistiPeli luokan metodia run. 
+Metodi luo ilmentymän peliruudusta joka käyttää parametrina generaattoria eli käyttää generaattoria.
+Luokka PeliRuutu luo ensimmäisenä aloitusvalikon(käyttää metodia luoRuutu) 
+johon pelaaja antaa nimimerkin sekä aloittaa pelin painamalla pelaa nappia. 
+Kun painetaan pelaa nappia metodi aloitaPeli luo uuden ruudun 
+(käyttää metodia luoPeliruutu) tässä ruudussa varsinainen pelaaminen tapahtuu. 
+Metodi generoiVastaukset arpoo vastausvaihtoehdot paikoilleen, 
+kun pelin skippaa nappia painetaan siirtyy peli uuteen kysymykseen. 
+Kun kysymykset loppuu näyttää peli pelaajan tulokset, naytaTulokset sekä luoLoppuRuutu metodien avulla.
+Pelaajan tiedot eli nimimerkki sekä pisteet on peliruudulla tiedossa.
+KysymysGeneraattori käyttää kysymysLataajaa lataamaan kysymykset jotka on tallennettuna listaan luokassa kysymys.
+Varsinainen "kysymys" on rekisterissä mistä luokka kysymysLataaja lataa tiedoston generaattorin käyttöön.
