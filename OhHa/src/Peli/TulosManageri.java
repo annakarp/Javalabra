@@ -15,9 +15,11 @@ package Peli;
 
 
 /**
- *
+ * Laajennettavuus mahdollisuus 
  * @author AK
  */
+
+
 class TulosManageri {
     
 }

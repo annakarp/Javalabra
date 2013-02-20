@@ -48,6 +48,8 @@ public class PeliRuutu implements ActionListener {
         this.ruutu.pack();
         this.ruutu.setVisible(true);
     }
+    
+   
 
     private void luoRuutu(Container container) {
         GridLayout layout = new GridLayout(3, 2);
@@ -61,7 +63,7 @@ public class PeliRuutu implements ActionListener {
         //nimim.addActionListener(this);
         JLabel aika = new JLabel("10sec");
 
-        JButton huippupisteet = new JButton("Pistelista");
+        JLabel huippupisteet = new JLabel("");
         JButton pelaa = new JButton("Pelaa!");
 
         pelaa.addActionListener(this);
@@ -224,7 +226,7 @@ public class PeliRuutu implements ActionListener {
 
     public void lopetaPeli() {
         System.out.println("Nimimerkki: " + pelaaja.getNimimerkki() + "\n" + "Pisteet: " + pelaaja.getPisteet());
-        this.ruutu.dispose();
+        
         
         naytaTulokset();
     }
@@ -232,11 +234,39 @@ public class PeliRuutu implements ActionListener {
     private void naytaTulokset() {
         TulosManageri tulosmanageri = new TulosManageri();
         
+        this.ruutu.dispose();
+        this.ruutu = new JFrame("Tuloksesi");
+        this.ruutu.setPreferredSize(new Dimension(400, 200));
+        this.ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        luoLoppuRuutu(ruutu.getContentPane());
+        this.ruutu.pack();
+        this.ruutu.setVisible(true);
+        
+        
+        
         //kutsutaan tulosmanagerien metodeja lataaTulokset ja täytetään labelit
         
         //tallennetaan uusi tulos tekstitiedoston kutsumalla tulosmanagerin metodia tallennaTulos
         
         //suljetaan ohjelma
-        System.exit(0);
+      
+    }
+    
+     private void luoLoppuRuutu(Container container){
+        GridLayout layout = new GridLayout(3, 2);
+        container.setLayout(layout);
+
+        JLabel nimimerkki = new JLabel("Nimimerkkisi:");
+        JLabel vastausaika = new JLabel("Pisteesi:");
+        
+        JLabel nick = new JLabel(pelaaja.getNimimerkki());
+        JLabel aika = new JLabel(pelaaja.getPisteet()+ "");
+        
+        container.add(nimimerkki);
+        container.add(nick);
+
+        container.add(vastausaika);
+        container.add(aika);
+
     }
 }
