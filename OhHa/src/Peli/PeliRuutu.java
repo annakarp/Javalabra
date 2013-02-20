@@ -225,12 +225,10 @@ public class PeliRuutu implements ActionListener {
     }
 
     public void lopetaPeli() {
-        System.out.println("Nimimerkki: " + pelaaja.getNimimerkki() + "\n" + "Pisteet: " + pelaaja.getPisteet());
-        
-        
+        //System.out.println("Nimimerkki: " + pelaaja.getNimimerkki() + "\n" + "Pisteet: " + pelaaja.getPisteet());
         naytaTulokset();
     }
-    //luo ikkuna ja täytä labelit pelaajan tiedoilla
+    
     private void naytaTulokset() {
         TulosManageri tulosmanageri = new TulosManageri();
         
@@ -241,15 +239,8 @@ public class PeliRuutu implements ActionListener {
         luoLoppuRuutu(ruutu.getContentPane());
         this.ruutu.pack();
         this.ruutu.setVisible(true);
+        ajastin.stop();
         
-        
-        
-        //kutsutaan tulosmanagerien metodeja lataaTulokset ja täytetään labelit
-        
-        //tallennetaan uusi tulos tekstitiedoston kutsumalla tulosmanagerin metodia tallennaTulos
-        
-        //suljetaan ohjelma
-      
     }
     
      private void luoLoppuRuutu(Container container){
