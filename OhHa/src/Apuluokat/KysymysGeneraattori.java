@@ -22,7 +22,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
+ *luokka KysymysGeneraattori lataa kysymykset rekisteristä, tsekkaa onko kysymykset mahdollisesti loppu sekä
+ * arpoo satunnaisesti uuden kysymyksen
  * @author AK
  */
 public class KysymysGeneraattori {
@@ -34,6 +35,12 @@ public class KysymysGeneraattori {
         this.lataaja = lataaja;
         lataaKysymykset();
     }
+    
+    /**
+     * metodi generoiKysymys arpoo satunnaisen kysymyksen ja vastausvaihtoehdot
+     * @return kysymys-luokan olion
+     */
+    
     public Kysymys generoiKysymys() {
         int kysymyksenIndeksi = 0 + (int)(Math.random() * (((kysymykset.size()-1)) + 1));
         Kysymys generoituKysymys = kysymykset.get(kysymyksenIndeksi);
@@ -41,12 +48,24 @@ public class KysymysGeneraattori {
         return generoituKysymys;
     }
     
+    /**
+     * metodi kysymyksetLoppu tsekkaa onko kysymykset lista tyhja
+     * @return palauttaa totuusarvon
+     */
+    
     public boolean kysymyksetLoppu() {
         if(kysymykset.isEmpty())
             return true;
         
         return false;
     }
+    
+    /**
+     * metodi lataaKysymykset lataa kysymykset-listan generaattorin käåytettäväksi käyttämällä luokan 
+     * KysymysLataaja luokan lataa-metodia
+     * @throws FileNotFoundException jos lataus ei onnistu
+     */
+    
     private void lataaKysymykset() throws FileNotFoundException {
         kysymykset = lataaja.lataa();
     }

@@ -13,11 +13,11 @@ package Peli;
  * and open the template in the editor.
  */
 
-
 /**
- *
- * @author AK
+ * luokka Pelaaja antaa pelin käyttäjälle parametrit elin nimimerkin sekä pisteet
+ * @author annakarp
  */
+
 public class Pelaaja {
     private String nimimerkki;
     private int pisteet;

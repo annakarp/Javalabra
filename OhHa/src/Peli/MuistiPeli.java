@@ -17,7 +17,7 @@ package Peli;
 import Apuluokat.KysymysGeneraattori;
 
 /**
- *
+ *luokka MuistiPeli 
  * @author AK
  */
 public class MuistiPeli implements Runnable{

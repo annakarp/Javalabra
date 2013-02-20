@@ -21,7 +21,8 @@ import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
 /**
- *
+ * luokka PeliRuutu luo pelin aloitusvalikon, varsinaisen peliruudun sekä lopetusvalikon, hallinnoi pelinappien toimintaa
+ * sekä lopettaa pelin
  * @author AK
  */
 public class PeliRuutu implements ActionListener {
@@ -40,6 +41,7 @@ public class PeliRuutu implements ActionListener {
         luoAloitusValikko();
     }
 
+    
     public void luoAloitusValikko() {
         this.ruutu = new JFrame("Pääkaupunkivisa");
         this.ruutu.setPreferredSize(new Dimension(400, 200));
@@ -49,7 +51,10 @@ public class PeliRuutu implements ActionListener {
         this.ruutu.setVisible(true);
     }
     
-   
+   /**
+    * metodi luoRuutu  luo näkyviin aloitusvalikon näkymän
+    * @param container sijoittaa ruudun sisällön näkyviin
+    */
 
     private void luoRuutu(Container container) {
         GridLayout layout = new GridLayout(3, 2);
@@ -78,7 +83,12 @@ public class PeliRuutu implements ActionListener {
         container.add(pelaa);
     }
 
-    //nappien toiminnallisuudet
+     /**
+      * metodi actionPerformed toteuttaa nappien toiminnallisuudet
+      * @param ae toteutta ActionEventin
+      */
+             
+             
     @Override
     public void actionPerformed(ActionEvent ae) {
 
@@ -95,7 +105,13 @@ public class PeliRuutu implements ActionListener {
         }
 
     }
-
+    
+    /**
+      * metodi AloitaPeli  luo ruudun uudelleen
+      * @param 
+      */
+    
+    
     public void AloitaPeli() {
         if (generaattori.kysymyksetLoppu()) {
             lopetaPeli();
@@ -108,6 +124,12 @@ public class PeliRuutu implements ActionListener {
         this.ruutu.pack();
         this.ruutu.setVisible(true);
     }
+    
+    /**
+     * metodi luoPeliRuutu luo varsinaisen peliruudukon sekä hallinnoi nappien toimintaa
+     * @param container jälleen sijoittaa nappien toiminnallisuuden
+     */
+    
 
     private void luoPeliruutu(Container container) {
         this.ruutu.setPreferredSize(new Dimension(800, 800));
@@ -204,6 +226,13 @@ public class PeliRuutu implements ActionListener {
         container.add(oljenkorret);
     }
 
+    
+    /**
+     * metodi generoiVastausvaihtoehdot sekoittaa vastausvaihtoehdot nappeihin satunnaisesti
+     * @param oikeanVastauksenIndeksi on pääkaupunki jonka sijainti on myöskin vaihtuva
+     * @return listan vastausvaihtoehdoista
+     */
+    
     private ArrayList<JButton> generoiVastausvaihtoehdot(int oikeanVastauksenIndeksi) {
         ArrayList<JButton> list = new ArrayList<JButton>();
         boolean vastausGeneroitu = false;
@@ -224,10 +253,23 @@ public class PeliRuutu implements ActionListener {
         return list;
     }
 
+    /**
+     * metodi lopetaPeli käyttää metodia nayttaTulokset
+     * @param 
+     * 
+     */
+    
     public void lopetaPeli() {
         //System.out.println("Nimimerkki: " + pelaaja.getNimimerkki() + "\n" + "Pisteet: " + pelaaja.getPisteet());
         naytaTulokset();
     }
+    
+     /**
+     * metodi naytaTulokset käyttää metodia luoLoppuRuutu näyttääkseen lopulliset tulokset
+     * @param 
+     * 
+     */
+  
     
     private void naytaTulokset() {
         TulosManageri tulosmanageri = new TulosManageri();
@@ -242,6 +284,11 @@ public class PeliRuutu implements ActionListener {
         ajastin.stop();
         
     }
+    
+       /**
+        * metodi luoLoppuRuutu luo loppuruudun sekä näyttää tulokset
+        * @param container 
+        */
     
      private void luoLoppuRuutu(Container container){
         GridLayout layout = new GridLayout(3, 2);

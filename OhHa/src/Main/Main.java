@@ -11,7 +11,7 @@ import Peli.MuistiPeli;
 import java.io.FileNotFoundException;
 
 /**
- *
+ *käynnistää ohjelman
  * @author AK
  */
 public class Main {

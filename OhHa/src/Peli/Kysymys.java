@@ -8,6 +8,12 @@ private String nimi;
 private List<String> vastausV;
 private String vastaus;
 
+/**
+ * luokka Kysymys hallinnoi/luo kysymykset-listalle parametrit
+ * @param nimi on varsinainen kysymys, elikkä maa
+ * @param vastausV on ylimääräiset kaupungit
+ * @param vastaus on oikea kaupunki
+ */
 
     public Kysymys(String nimi, List<String> vastausV, String vastaus) {
     this.nimi = nimi;

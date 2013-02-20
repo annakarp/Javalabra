@@ -22,12 +22,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+
+/**
+ * luokka KysymysLataaja lataa rekisterin
+ * @author annakarp
+ */
+
 public class KysymysLataaja {
     private File tiedosto;
 
     public KysymysLataaja(String osoite) {
         tiedosto = new File(osoite);
     }
+    
+    /**
+     * metodi lataa lataa rekisteri tiedostosta vastausvaihtoehdot, kysymyksen ja oikean vastauksen lista muodossa
+     * @return listan 
+     * @throws FileNotFoundException mikäli tiedostoa ei löydy
+     */
+    
     
     public List<Kysymys> lataa() throws FileNotFoundException {
         List<Kysymys> palautettavatKysymykset = new ArrayList<Kysymys>();
