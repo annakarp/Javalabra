@@ -62,7 +62,7 @@ public class KysymysGeneraattori {
     
     /**
      * metodi lataaKysymykset lataa kysymykset-listan generaattorin käåytettäväksi käyttämällä luokan 
-     * KysymysLataaja luokan lataa-metodia
+     * KysymysLataaja luokan lataa-metodia 
      * @throws FileNotFoundException jos lataus ei onnistu
      */
     
