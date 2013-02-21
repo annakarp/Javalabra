@@ -204,6 +204,7 @@ public class PeliRuutu implements ActionListener {
         });
 
         JButton skippaa = new JButton("Skippaa");
+        
         skippaa.addActionListener(this);
         
 
@@ -224,6 +225,7 @@ public class PeliRuutu implements ActionListener {
         container.add(d);
 
         container.add(oljenkorret);
+       
     }
 
     
