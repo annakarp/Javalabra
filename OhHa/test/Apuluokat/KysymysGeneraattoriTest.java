@@ -5,6 +5,8 @@
 package Apuluokat;
 
 import Peli.Kysymys;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,6 +19,11 @@ import static org.junit.Assert.*;
  * @author annakarp
  */
 public class KysymysGeneraattoriTest {
+    ArrayList<Kysymys> kysymykset;
+    Kysymys kysymys;
+    String nimi;
+    ArrayList<String> vastausv;
+    String vastaus;
     
     public KysymysGeneraattoriTest() {
         
@@ -32,6 +39,11 @@ public class KysymysGeneraattoriTest {
     
     @Before
     public void setUp() {
+        kysymykset = new ArrayList<Kysymys>();
+        vastausv = new ArrayList<String>();
+        vastausv.add("jee");
+        kysymys = new Kysymys(nimi,vastausv,vastaus);
+        
     }
     
     @After
@@ -39,14 +51,10 @@ public class KysymysGeneraattoriTest {
     }
 
    
-    @Test
-    public void testGeneroiKysymys() {
-       
-        
-    }
 
         @Test
-    public void testKysymyksetLoppu() {
-       
+        public void onkoKysymyksetLoppu() {
+            kysymykset.add(kysymys);
+            assertTrue(!kysymykset.isEmpty());
     }
 }
