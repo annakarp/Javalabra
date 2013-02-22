@@ -20,6 +20,7 @@ public class Main {
         KysymysGeneraattori generaattori = new KysymysGeneraattori(lataaja);
         MuistiPeli peli = new MuistiPeli(generaattori); 
         
+        
         peli.run();
         
         
