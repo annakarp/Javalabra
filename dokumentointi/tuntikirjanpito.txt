@@ -12,4 +12,6 @@
          rakenteen muokkaamista kokeiluasteella, en tuo sitä vielä varsinaiseen tehtävään
 12.2 1h, javadocin kirjoittamista, uuden ja vanhan vertailua, saatan tehdä osan ohjelmasta uusiksi
 18.2 4h, koodin uudelleen rakentaminen, siistiminen, turhien luokkien karsiminen, tuli nätti
-20.2 
+20.2 2h, koodin toimivuuden varmistaminen, javadocin täydentäminen, jar-tiedoston luonnin yrittäminen
+21.2 2h, testien kirjoittaminen(yritys), jar-tiedoston toimivaksi saattaminen
+22.2 1h, testausdokumentaatio, tuntikirjanpidon päivittäminen ja testien kirjoittamisen yrittämien 
