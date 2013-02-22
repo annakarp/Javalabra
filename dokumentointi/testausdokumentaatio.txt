@@ -1,0 +1,4 @@
+Testausdokumentaatio:
+Pyrin testaamaan ohjelmani jokaista luokkaa. Toteutus kuitenkin oli, että testasin vain muutamaa luokkaa ja muutamaa metodia, koska en osannutkaan kirjoittaa testejä oikein. 
+Yrittäessäni testata tiedoston lataamista generaattorin käyttöön onnistuin hukkaamaan koko tiedoston. 
+Ohjelmani testaus on vajaavainen, kuitenkin "käsitestaus" eli ohjelman pyörittäminen onnistuu vaikka esimerkiksi nimimerkki olisikin numero tai numero-kirjainyhdistelmä. 
